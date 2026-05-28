@@ -28,9 +28,41 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* ── DOWNLOAD BUTTON ── */
+  .toolbar {
+    max-width: 860px;
+    margin: 28px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 4px;
+  }
+
+  .btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--paper);
+    background: var(--accent);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(201,79,42,0.25);
+  }
+
+  .btn-pdf:hover { background: #a83d20; transform: translateY(-1px); }
+  .btn-pdf:active { transform: translateY(0); }
+
+  .btn-pdf svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
   .page {
     max-width: 860px;
-    margin: 40px auto;
+    margin: 12px auto 40px;
     background: var(--paper);
     box-shadow: 0 2px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
     padding: 52px 58px 58px;
@@ -86,7 +118,7 @@
   /* ── BODY LAYOUT ── */
   .body {
     display: grid;
-    grid-template-columns: 1fr 210px;
+    grid-template-columns: 1fr 212px;
     gap: 38px;
   }
 
@@ -118,7 +150,7 @@
     color: var(--ink-soft);
     font-weight: 300;
     font-size: 12.5px;
-    line-height: 1.78;
+    line-height: 1.8;
   }
 
   /* ── PROJECTS ── */
@@ -133,23 +165,10 @@
     flex-wrap: wrap;
   }
 
-  .project-name {
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--ink);
-  }
+  .project-name { font-weight: 600; font-size: 13px; color: var(--ink); }
+  .project-stack { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-muted); }
 
-  .project-stack {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--ink-muted);
-  }
-
-  .project-links {
-    margin-left: auto;
-    display: flex;
-    gap: 6px;
-  }
+  .project-links { margin-left: auto; display: flex; gap: 6px; }
 
   .project-links a {
     font-family: 'DM Mono', monospace;
@@ -163,6 +182,20 @@
   }
 
   .project-links a:hover { background: var(--accent); color: white; }
+
+  /* featured badge */
+  .featured-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    background: #eaf4ee;
+    color: #2e7d4f;
+    border-radius: 2px;
+    padding: 2px 6px;
+    margin-left: 2px;
+    vertical-align: middle;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
 
   .project ul { list-style: none; padding: 0; }
 
@@ -184,7 +217,15 @@
     top: 2px;
   }
 
-  /* ── EXPERIENCE / DEVOPS ── */
+  code {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    background: #f0eeea;
+    padding: 0 3px;
+    border-radius: 2px;
+  }
+
+  /* ── ENTRIES (exp / devops) ── */
   .entry { margin-bottom: 18px; }
   .entry:last-child { margin-bottom: 0; }
 
@@ -232,7 +273,6 @@
     top: 2px;
   }
 
-  /* devops note */
   .context-note {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
@@ -258,16 +298,9 @@
 
   .skill-pills { display: flex; flex-wrap: wrap; gap: 4px; }
 
-  .pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    background: var(--accent-light);
-    color: var(--accent);
-    padding: 2px 7px;
-    border-radius: 2px;
-  }
-
+  .pill { font-family: 'DM Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 2px; }
   .pill.dark { background: var(--ink); color: #fff; }
+  .pill.accent { background: var(--accent-light); color: var(--accent); }
   .pill.muted { background: #f0eeea; color: var(--ink-soft); }
   .pill.green { background: #eaf4ee; color: #2e7d4f; }
 
@@ -276,19 +309,8 @@
   .edu-program { font-size: 11.5px; color: var(--ink-soft); margin-top: 1px; }
   .edu-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-muted); margin-top: 2px; }
 
-  .course-entry { font-size: 11.5px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 6px; }
+  .course-entry { font-size: 11.5px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 7px; }
   .course-entry span { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-muted); }
-  .badge {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    background: #eaf4ee;
-    color: #2e7d4f;
-    border-radius: 2px;
-    padding: 1px 5px;
-    margin-left: 4px;
-    vertical-align: middle;
-  }
 
   .lang-entry {
     display: flex;
@@ -302,11 +324,13 @@
   .lang-entry:last-child { border-bottom: none; }
   .lang-level { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-muted); }
 
+  /* ── PRINT ── */
   @media print {
     body { background: white; font-size: 12px; }
+    .toolbar { display: none !important; }
     .page { box-shadow: none; margin: 0; padding: 36px 44px 44px; max-width: 100%; }
     a { color: inherit !important; text-decoration: none !important; }
-    .project-links a { border-color: #999; color: #555; }
+    .project-links a { border-color: #999 !important; color: #555 !important; }
   }
 
   @media (max-width: 680px) {
@@ -315,11 +339,21 @@
     .header { grid-template-columns: 1fr; }
     .contact-grid { align-items: flex-start; }
     .name { font-size: 30px; }
+    .toolbar { margin: 16px 16px 0; }
   }
 </style>
 </head>
 <body>
-<div class="page">
+
+<!-- DOWNLOAD BUTTON -->
+<div class="toolbar">
+  <button class="btn-pdf" onclick="downloadPDF()">
+    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </button>
+</div>
+
+<div class="page" id="cv-page">
 
   <!-- HEADER -->
   <header class="header">
@@ -344,7 +378,7 @@
       <section class="summary">
         <div class="section-label">Profile</div>
         <p>
-          Full-Stack Developer with a strong backend and systems foundation, comfortable across the full delivery stack — from application code and APIs to containerized deployments and cloud infrastructure. Built systems in Rust, Go, and JavaScript; deployed on Linux, Docker, and Kubernetes; and recently expanded into mobile with Flutter. Fluent in AI-augmented development (RAG systems, vibe-coding methodology). Previously spent two years as a digital currency analyst, sharpening data interpretation and risk-driven decision making. Actively deepening DevOps expertise through structured cloud-native training on AWS and K8s.
+          Full-Stack Developer with a strong backend and systems foundation — comfortable from API design and database architecture to containerized cloud deployments. Built production-grade systems in Rust, Go, JavaScript, and Dart/Flutter; deployed services on Linux, Docker, and Kubernetes. Fluent in AI-augmented development workflows. Shipped a real-world Flutter app to the Google Play Store and am actively working toward a full public release with ~100 users. Curiosity for how systems work was sparked by over eight years of competitive gaming — and that mindset has never left.
         </p>
       </section>
 
@@ -352,6 +386,24 @@
       <section>
         <div class="section-label">Projects</div>
 
+        <!-- FEATURED: Jerusalem Spikers -->
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Jerusalem Spikers <span class="featured-badge">Real-World · In Progress</span></span>
+            <span class="project-stack">Flutter · Dart · Firebase</span>
+            <div class="project-links">
+              <a href="https://play.google.com/store" target="_blank">Play Store</a>
+            </div>
+          </div>
+          <ul>
+            <li>Contributed to a production Flutter app for a volleyball center managing registrations, game scheduling, and member data.</li>
+            <li>Solely responsible for deploying the app to the Google Play Store (test release live) and Apple App Store submission process.</li>
+            <li>Deployed and maintain the web version of the app; full public launch targeting ~100 active users in progress.</li>
+            <li>Applied end-to-end product delivery experience: store compliance, release management, and live environment operations.</li>
+          </ul>
+        </div>
+
+        <!-- Kanban -->
         <div class="project">
           <div class="project-header">
             <span class="project-name">Kanban Dashboard</span>
@@ -359,26 +411,12 @@
             <div class="project-links"><a href="#">GitHub</a></div>
           </div>
           <ul>
-            <li>Cross-platform mobile app with drag-and-drop task management, built using Flutter.</li>
-            <li>Developed using an engineering-focused AI-assisted workflow (vibe coding) — leveraging AI to accelerate delivery while critically validating output.</li>
+            <li>Cross-platform mobile task manager with drag-and-drop board UI, built using Flutter.</li>
+            <li>Built using an engineering-focused AI-assisted workflow — leveraging AI tools to accelerate delivery while critically validating output.</li>
           </ul>
         </div>
 
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">Smart Intersection Simulation</span>
-            <span class="project-stack">Rust · SDL2</span>
-            <div class="project-links">
-              <a href="https://github.com/NoorHalabi911" target="_blank">GitHub</a>
-              <a href="https://youtu.be/Vcy7ugPWT5s?si=ClhANg8JPEKizNo6" target="_blank">Demo</a>
-            </div>
-          </div>
-          <ul>
-            <li>Event-driven simulation engine modeling real-time agents at a smart traffic intersection.</li>
-            <li>Focused on performance, safety constraint enforcement, and system behavior under load.</li>
-          </ul>
-        </div>
-
+        <!-- HTTP Server -->
         <div class="project">
           <div class="project-header">
             <span class="project-name">Custom HTTP/1.1 Web Server</span>
@@ -386,37 +424,29 @@
             <div class="project-links"><a href="https://github.com/NoorHalabi911/HTTP-server" target="_blank">GitHub</a></div>
           </div>
           <ul>
-            <li>Non-blocking HTTP/1.1 server from scratch using Linux <code style="font-family:'DM Mono',monospace;font-size:11px">epoll</code> for async I/O.</li>
-            <li>Implemented sessions, cookies, file uploads, CGI execution, routing, and response generation.</li>
-            <li>Stress-tested concurrency handling and availability under simulated load.</li>
+            <li>Non-blocking HTTP/1.1 server from scratch using Linux <code>epoll</code> for async I/O.</li>
+            <li>Full implementation: sessions, cookies, file uploads, CGI execution, request routing, and response generation.</li>
+            <li>Stress-tested concurrency and availability under simulated load.</li>
           </ul>
         </div>
 
+        <!-- Smart Intersection -->
         <div class="project">
           <div class="project-header">
-            <span class="project-name">Unix-Like Shell (0-Shell)</span>
-            <span class="project-stack">Rust</span>
-            <div class="project-links"><a href="https://github.com/NoorHalabi911/zero-shell/" target="_blank">GitHub</a></div>
-          </div>
-          <ul>
-            <li>Lightweight Unix shell with process spawning, command parsing, signals, and filesystem interaction.</li>
-          </ul>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">ASCII Art Web Generator</span>
-            <span class="project-stack">Go · HTML · CSS</span>
+            <span class="project-name">Smart Intersection Simulation</span>
+            <span class="project-stack">Rust · SDL2</span>
             <div class="project-links">
-              <a href="https://github.com/NoorHalabi911/AsciiArt_Web" target="_blank">GitHub</a>
-              <a href="https://web-docker-asciiart-march2024.onrender.com/" target="_blank">Live</a>
+              <a href="https://github.com/NoorHalabi911" target="_blank">GitHub</a>
+              <a href="https://youtu.be/Vcy7ugPWT5s" target="_blank">Demo</a>
             </div>
           </div>
           <ul>
-            <li>Full-stack app with RESTful Go endpoints, server-side HTML rendering, and robust error handling.</li>
+            <li>Event-driven simulation engine modeling real-time agents at a smart traffic intersection.</li>
+            <li>Focused on performance, safety constraint enforcement, and system behavior under sustained load.</li>
           </ul>
         </div>
 
+        <!-- GraphQL -->
         <div class="project">
           <div class="project-header">
             <span class="project-name">GraphQL Profile Dashboard</span>
@@ -427,30 +457,29 @@
             </div>
           </div>
           <ul>
-            <li>Real-time profile dashboard with GraphQL API, JWT auth, and data visualization. Deployed on GitHub Pages.</li>
+            <li>Profile dashboard consuming a live GraphQL API with JWT auth and dynamic SVG data visualization. Deployed on GitHub Pages.</li>
           </ul>
         </div>
 
       </section>
 
-      <!-- DEVOPS EXPERIENCE -->
+      <!-- DEVOPS -->
       <section>
         <div class="section-label">DevOps &amp; Infrastructure</div>
         <p class="context-note">Hands-on labs, self-directed projects, and simulated production environments</p>
         <div class="entry">
           <ul>
             <li>Built and hardened Linux servers: user management, SSH hardening, firewall rules, cron-based backups.</li>
-            <li>Designed multi-subnet network topologies with routing, DHCP, DNS, HTTP/HTTPS service exposure.</li>
-            <li>Containerized microservices using Docker and Docker Compose — networks, volumes, env vars.</li>
-            <li>Deployed microservices on Kubernetes (K3s): Deployments, Services, StatefulSets, autoscaling, Secrets.</li>
-            <li>Applied Terraform concepts for repeatable, code-driven infrastructure provisioning.</li>
-            <li>Deployed and managed cloud workloads on AWS; practiced cost-awareness and cloud security principles.</li>
-            <li>Set up monitoring, logging, and scaling pipelines in cloud-native microservice architectures.</li>
+            <li>Designed multi-subnet network topologies with routing, DHCP, DNS, and HTTP/HTTPS service exposure.</li>
+            <li>Containerized microservices using Docker and Docker Compose — networks, volumes, and environment management.</li>
+            <li>Deployed microservices on Kubernetes (K3s): Deployments, Services, StatefulSets, autoscaling, and Secrets.</li>
+            <li>Applied Terraform for repeatable, code-driven infrastructure provisioning.</li>
+            <li>Deployed and managed cloud workloads on AWS; practiced security hardening and cost-awareness principles.</li>
           </ul>
         </div>
       </section>
 
-      <!-- WORK EXPERIENCE -->
+      <!-- EXPERIENCE -->
       <section>
         <div class="section-label">Work Experience</div>
 
@@ -461,8 +490,8 @@
           </div>
           <div class="entry-sub">TechnoGeeks</div>
           <ul>
-            <li>Delivered programming workshops (logic, algorithms, problem solving) to school students.</li>
-            <li>Demonstrated immersive VR technologies; developed communication and technical presentation skills.</li>
+            <li>Delivered programming workshops (logic, algorithms, problem solving) to school-age students.</li>
+            <li>Demonstrated VR technology; developed technical communication and public presentation skills.</li>
           </ul>
         </div>
 
@@ -473,8 +502,8 @@
           </div>
           <div class="entry-sub">Self-Employed</div>
           <ul>
-            <li>Conducted technical analysis on crypto markets using price action and trend indicators.</li>
-            <li>Built data-driven decision making and risk assessment frameworks — skills transferable to system observability and incident response.</li>
+            <li>Conducted technical analysis on cryptocurrency markets using price action, trend indicators, and risk frameworks.</li>
+            <li>Built strong data-interpretation and pattern-recognition habits — directly applicable to system observability, metrics analysis, and incident triage.</li>
           </ul>
         </div>
 
@@ -501,22 +530,24 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-category">Mobile</div>
+          <div class="skill-category">Mobile &amp; Frontend</div>
           <div class="skill-pills">
-            <span class="pill">Flutter</span>
+            <span class="pill accent">Flutter</span>
+            <span class="pill accent">Play Store Deploy</span>
+            <span class="pill accent">App Store Deploy</span>
           </div>
         </div>
 
         <div class="skill-group">
           <div class="skill-category">Backend &amp; Web</div>
           <div class="skill-pills">
-            <span class="pill">REST APIs</span>
-            <span class="pill">GraphQL</span>
-            <span class="pill">HTTP/HTTPS</span>
-            <span class="pill">Auth / JWT</span>
-            <span class="pill">SSR</span>
-            <span class="pill">OOP</span>
-            <span class="pill">Databases</span>
+            <span class="pill accent">REST APIs</span>
+            <span class="pill accent">GraphQL</span>
+            <span class="pill accent">HTTP/HTTPS</span>
+            <span class="pill accent">Auth / JWT</span>
+            <span class="pill accent">OOP</span>
+            <span class="pill accent">Databases</span>
+            <span class="pill accent">SSR</span>
           </div>
         </div>
 
@@ -525,7 +556,7 @@
           <div class="skill-pills">
             <span class="pill muted">Docker</span>
             <span class="pill muted">Docker Compose</span>
-            <span class="pill muted">Kubernetes (K3s)</span>
+            <span class="pill muted">Kubernetes</span>
             <span class="pill muted">AWS</span>
             <span class="pill muted">Terraform</span>
             <span class="pill muted">Linux</span>
@@ -539,18 +570,18 @@
           <div class="skill-pills">
             <span class="pill muted">Multithreading</span>
             <span class="pill muted">Event-driven</span>
-            <span class="pill muted">epoll / async I/O</span>
+            <span class="pill muted">Async I/O</span>
             <span class="pill muted">Process Mgmt</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <div class="skill-category">AI / Tooling</div>
+          <div class="skill-category">AI &amp; Tooling</div>
           <div class="skill-pills">
-            <span class="pill">RAG Systems</span>
-            <span class="pill">Vibe Coding</span>
-            <span class="pill">Cursor</span>
-            <span class="pill">Git</span>
+            <span class="pill green">RAG Systems</span>
+            <span class="pill green">Vibe Coding</span>
+            <span class="pill green">Cursor</span>
+            <span class="pill muted">Git</span>
           </div>
         </div>
       </section>
@@ -562,23 +593,13 @@
           <div class="edu-program">Full-Stack Software Development</div>
           <div class="edu-date">Oct 2023 – Dec 2025 · Jerusalem</div>
         </div>
-        <p style="font-size:11px; color:var(--ink-muted); line-height:1.65; margin-bottom:12px;">
-          Rust, Go, systems programming, algorithms, DB design, Linux, HTTP servers, multiplayer networking, real-time simulations.
+        <p style="font-size:11px; color:var(--ink-muted); line-height:1.65;">
+          Rust, Go, systems programming, algorithms, database design, Linux, HTTP servers, multiplayer networking, and real-time simulations.
         </p>
-        <div class="edu-entry">
-          <div class="edu-school">Al-Furqan High School</div>
-          <div class="edu-program">Secondary Education (Tawjihi)</div>
-          <div class="edu-date">Class of 2022</div>
-        </div>
       </section>
 
       <section>
         <div class="section-label">Courses</div>
-        <div class="course-entry">
-          DevOps Engineering — Hands-On Labs<br>
-          <span>KodeKloud · Jan 2026 – present</span>
-          <span class="badge">ongoing</span>
-        </div>
         <div class="course-entry">
           The Twelve-Factor App Methodology<br>
           <span>KodeKloud · 2026</span>
@@ -600,5 +621,15 @@
   </div>
 
 </div>
+
+<script>
+function downloadPDF() {
+  const btn = document.querySelector('.toolbar');
+  btn.style.display = 'none';
+  window.print();
+  setTimeout(() => { btn.style.display = 'flex'; }, 500);
+}
+</script>
+
 </body>
 </html>
